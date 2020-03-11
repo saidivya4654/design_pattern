@@ -1,0 +1,31 @@
+		int r1=0,r2=0,r=0;
+		int i=0,j=0,k=0;
+		int a[]=new int[3];
+		int a1[]=new int[3];
+		int a2[]=new int[3];
+		while(input1>0)
+		{
+			r=input1%10;
+			a[i]=r;
+			i++;
+			input1=input1/10;
+		}
+		while(input2>0)
+		{
+			r1=input2%10;
+			a1[j]=r;
+			j++;
+			input2=input2/10;
+		}
+		while(input3>0)
+		{
+			r2=input3%10;
+			a2[k]=r;
+			k++;
+			input3=input3/10;
+		}
+String s=String.valueOf(a2[2])+String.valueOf(a1[1])+String.valueOf(a[0]);
+		int n=Integer.parseInt(s);
+		return n;
+	}
+}

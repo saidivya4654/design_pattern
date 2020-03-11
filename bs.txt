@@ -1,0 +1,305 @@
+import java.io.*;
+
+import java.util.*;
+
+class cusdet
+{
+    
+Scanner s1=new Scanner(System.in);
+
+String cname,add;
+
+double phno;
+
+String accno;
+
+int loan=0;
+
+int balance=0;
+
+void details(String cname,String add,double  phno,String accno,int amount)
+{
+
+this.cname=cname;
+
+this.add=add;
+
+this.phno=phno;
+
+this.accno=accno;
+
+balance=balance+amount;
+
+}
+
+void display()
+
+{
+    
+System.out.println("cname:"+cname);
+   
+ System.out.println("address:"+add);
+   
+ System.out.println("phno:"+phno);
+    
+System.out.println("accno:"+accno);
+   
+ System.out.println("balance:"+balance);
+    
+System.out.println("loanamount:"+loan);
+
+}
+
+}
+
+class wd extends cusdet
+{
+    
+void withdraw()
+    {
+       
+ System.out.println("enter amount to withdraw");
+        
+int i1=s1.nextInt();
+        
+this.balance-=i1;
+        
+System.out.println("the current balance in account is"+this.balance);
+    
+}
+}
+
+class dp extends cusdet
+{
+    
+void deposit()
+    {
+       
+ System.out.println("enter amount to withdraw");
+       
+ int i1=s1.nextInt();
+        
+this.balance+=i1;
+       
+ System.out.println("the current balance in account is"+this.balance);
+        
+    
+}
+}
+
+class loan extends cusdet
+{
+    
+void carloan()
+    {
+       
+ System.out.println("the car loan  of 100000 is granted");
+       
+ this.loan+=100000;
+    }
+   
+ void educationloan()
+    {
+        
+System.out.println("the education loan of 300000 is granted");
+        
+this.loan+=300000;
+    
+}
+   
+ void homeloan()
+   
+ {
+        
+System.out.println("the home loan of 1000000 is granted");
+       
+ this.loan+=1000000;
+   
+ }
+    
+}
+
+public class demo
+
+{
+
+public static void main(String arg[])
+
+{
+
+Scanner s=new Scanner(System.in);
+
+int n=s.nextInt();
+
+int i;
+
+cusdet a[]=new cusdet[n];
+
+while(true)
+{
+    
+System.out.println("1:create_account\n2:withdraw\n3:deposit\n4:loan\n5:exit");
+   
+ int c=s.nextInt();
+    
+switch(c)
+   
+ {
+       
+ case 1:for(i=0;i<n;i++)
+               
+        {
+                
+         System.out.println("enter"+(i)+"person details");
+                
+         System.out.println("enter name\n");
+                
+         String name=s.next();
+                
+	System.out.println("enter address\n");
+               
+	String add=s.next();
+                
+	System.out.println("enter phno");
+               
+	 double phno=s.nextDouble();
+                
+	System.out.println("enter accno");
+                
+	String accno=s.next();
+               
+	 System.out.println("enter amount");
+               
+	 int amount=s.nextInt();
+               
+	 a[i].details(name,add,phno,accno,amount);
+               
+	}
+              
+	 break;
+       
+ case 2:System.out.println("enter accountno");
+               
+	String a1=s.next();
+              
+	 for(i=0;i<n;i++)
+               
+	{
+                   
+	if(a[i].accno==a1)
+                   
+	{
+                       
+	a[i]=new wd();
+                       
+	((wd) a[i]).withdraw();
+                  
+	 }
+                   
+	else
+                   
+	{
+                      
+	 System.out.println("account not found");
+                  
+	 }
+               }
+               
+	break;
+        
+case 3:System.out.println("enter accountno");
+               
+	String m2=s.next();
+              
+	 for(i=0;i<n;i++)
+               
+	{
+                   
+	if(a[i].accno==m2)
+                   
+	{
+                       
+	a[i]=new dp();
+                       
+	((dp) a[i]).deposit();
+                   
+	}
+                   
+	else
+                  
+	 {
+                      
+	 System.out.println("account not found");
+                  
+	 }
+               }
+               
+	break;
+        
+case 4:System.out.println("enter accountno");
+              
+	String m3=s.next();
+               
+	for(i=0;i<n;i++)
+              
+	 {
+                   
+	if(a[i].accno==m3)
+                   
+	{
+                       
+	a[i]=new loan();
+                       
+	while(true)
+                      
+	 {
+                           
+	System.out.println("1:carloan%n2:educationloan%n3:homeloan%n");
+                         
+	int c1=s.nextInt();
+                         
+	switch(c1)
+                          
+	 {
+                               
+	case 1:((loan) a[i]).carloan();
+                                     
+		 break;
+                               
+	case 2:((loan) a[i]).educationloan();
+                                      
+		break;
+                               
+	case 3:((loan) a[i]).homeloan();
+                                      
+		break;
+                              
+ 	case 4:java.lang.System.exit(0);
+                           
+	}
+                       
+	}
+                   
+	}
+                   
+	else
+                   
+	{
+                       
+	System.out.println("account not found");
+                   
+	}
+               
+	}
+               	
+	break;
+        
+	case 5:java.lang.System.exit(0);
+               
+		break;
+        
+    
+}
+}
+}
+}

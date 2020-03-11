@@ -1,0 +1,33 @@
+		int i=0,k=0,j;
+		String s[]=input2.split(":");
+		String s2[]=input1.split("-");
+		int a[]=new int[s2.length];
+		for(j=0;j<s2.length;j++)
+		{
+			a[i]=s2[i].length();
+		}
+		String a1[]=new String[s.length];
+		for(i=0;i<s.length;i++)
+		{
+			String s4="";
+		if((s2[i].substring(0,a[i-1]).equals(s[i].substring(0,a[i-1]))) &&(s2[i].substring(a[i],s2[i].length()).equals(s[i].substring(a[i],s[i].length()) )))
+		   {
+			s4=s2[i].substring(0,a[i-1])+s[i].substring(a[i-1],a[i])+s[i].substring(a[i],s[i].length());
+			a1[k]=s4;
+			k=k+1;
+		   }
+		   }
+		String m="";
+		for(k=0;k<a1.length;k++)
+		{
+		  a1[i]=a1[i].toUpperCase();
+		}
+		for(k=0;k<a1.length;k++)
+		{
+			m=m+":"+a1[i];
+		}
+		
+		   
+		return m;
+	}
+}

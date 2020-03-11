@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        String s1=s.nextLine();
+        String s2=s.nextLine();
+        String sn="";
+        String ln="";
+        int n=s.nextInt();
+        int n1=s.nextInt();
+        if(s1.length()>s2.length())
+        {
+            sn=s2;
+            ln=s1;
+        }
+        if(s1.length()==s2.length())
+     {
+         if(s1.compareTo(s2)>0)
+         {
+             sn=s1;
+             ln=s2;
+         }
+         else
+         {
+             sn=s2;
+             ln=s1;
+         }
+     }
+     String userid1="";
+     String s3=String.valueOf(n);
+     userid1=sn.charAt(sn.length()-1)+ln+s3.charAt(s3.length()-n1)+s3.charAt(s3.length()-2);   
+    String a[]=userid1.split("");
+    char a1[]=userid1.toCharArray();
+    int i;
+    for(i=0;i<a.length;i++)
+    {
+        
+        if(Character.isUpperCase(a1[i]))
+        {
+            a[i]=a[i].toLowerCase();
+        }
+        if(Character.isLowerCase(a1[i]))
+        {
+            a[i]=a[i].toUpperCase();
+        }
+    }
+    String s4="";
+    for(i=0;i<a.length;i++)
+    {
+        s4=a[i]+s4;
+    }
+    System.out.println(s4);
+}
+}

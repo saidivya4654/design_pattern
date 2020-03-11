@@ -1,0 +1,43 @@
+		int i=0,k=0,j,m1=0;
+		String m="";
+        String s[]=input2.split(":");
+		String s2[]=input1.split("_");
+		int a[]=new int[s2.length];
+		for(j=0;j<s2.length;j++)
+		{
+			a[i]=s2[i].length();
+		}
+		String a1[]=new String[s.length];
+		for(i=0;i<s2.length;i++)
+		{
+			String s4="";
+			for(j=0;j<s.length;j++)
+			{
+		if((s2[i].equalsIgnoreCase(s[j].substring(0,a[i]))) &&(s2[i+1].equalsIgnoreCase(s[j].substring(a[i]+1,s[i+1].length())))) 
+		   {
+			s4=s2[i]+s[j].substring(a[i],a[i]+1)+s2[i+1];
+			a1[k]=s4;
+			k=k+1;
+		   }
+			else
+				
+			{
+			 m="ERROR_009";
+			}
+			}
+		   }
+		for(k=0;k<a1.length;k++)
+		{
+		  a1[k]=a1[k].toUpperCase();
+		}
+		for(k=0;k<a1.length;k++)
+		{
+			m=m+":"+a1[k];
+		}
+		
+		   
+		return m;
+	}
+}
+		
+	

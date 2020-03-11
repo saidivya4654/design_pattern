@@ -1,0 +1,54 @@
+		String s1="";
+        String s2="";
+		s1=input1;
+		s2=input2;
+        String sn="";
+        String ln="";
+        if(s1.length()>s2.length())
+        {
+            sn=s2;
+            ln=s1;
+        }
+        if(s1.length()==s2.length())
+     {
+         if(s1.compareTo(s2)>0)
+         {
+             sn=s1;
+             ln=s2;
+         }
+         else
+         {
+             sn=s2;
+             ln=s1;
+         }
+     }
+     String userid1="";
+     String s3=String.valueOf(input3);
+     userid1=sn.charAt(sn.length()-1)+ln+s3.charAt(input4-1)+s3.charAt(s3.length()-input4);   
+    char a[]=userid1.toCharArray();
+    int i;
+    for(i=0;i<a.length;i++)
+    {
+        
+        if(Character.isUpperCase(a[i]))
+        {
+            a[i]=Character.toLowerCase(a[i]);
+        }
+        else if(Character.isLowerCase(a[i]))
+        {
+            a[i]=Character.toUpperCase(a[i]);
+        }
+		else
+		{
+			a[i]=a[i];
+		}
+    }
+    String s4="";
+    for(i=0;i<a.length;i++)
+    {
+        s4=s4+a[i];
+    }
+    return(s4);
+}
+}
+		
